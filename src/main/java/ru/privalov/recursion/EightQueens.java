@@ -46,6 +46,7 @@ public class EightQueens {
     }
 
     public static void printMassive(int[][] array) {
+        System.out.println(++count + " вариант");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 if (array[i][j] == 1) {
@@ -56,6 +57,6 @@ public class EightQueens {
             }
             System.out.println();
         }
-        System.out.println(++count + " вариант");
+        System.out.println();
     }
 }
