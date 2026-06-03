@@ -6,10 +6,12 @@ public class SelectionSort {
     public static void main(String[] args) {
         int[] array = {5, 15, 1, 71, 6, 1589, 799, 88, -54, 0};
 
-        System.out.println(Arrays.toString(sort(array)));
+        sort(array);
+
+        System.out.println(Arrays.toString(array));
     }
 
-    public static int[] sort(int[] array) {
+    public static void sort(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             int minIndex = i;
 
@@ -25,7 +27,5 @@ public class SelectionSort {
                 array[minIndex] = buffer;
             }
         }
-
-        return array;
     }
 }
