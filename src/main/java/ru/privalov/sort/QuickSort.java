@@ -53,9 +53,9 @@ public class QuickSort {
         return left;
     }
 
-    private static void swap(int[] array, int left, int right) {
-        int buffer = array[left];
-        array[left] = array[right];
-        array[right] = buffer;
+    private static void swap(int[] array, int indexFirstElement, int indexSecondElement) {
+        int buffer = array[indexFirstElement];
+        array[indexFirstElement] = array[indexSecondElement];
+        array[indexSecondElement] = buffer;
     }
 }

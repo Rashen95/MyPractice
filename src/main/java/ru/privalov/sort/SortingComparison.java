@@ -10,10 +10,11 @@ public class SortingComparison {
         int amountElements = 100_000;
 
         int[] array1 = IntStream
-                .generate(() -> ThreadLocalRandom.current().nextInt(-100, 101))
+                .generate(() -> ThreadLocalRandom.current().nextInt(-amountElements, amountElements))
                 .limit(amountElements)
                 .toArray();
         int[] array2 = Arrays.copyOf(array1, array1.length);
+        int[] array3 = Arrays.copyOf(array1, array1.length);
 
         long start;
         long end;
@@ -31,6 +32,14 @@ public class SortingComparison {
         end = System.nanoTime();
         System.out.printf(
                 "Сортировка выбором справилась c сортировкой массива из %s элементов за %sмс\n",
+                amountElements, (end - start) / 1_000_000
+        );
+
+        start = System.nanoTime();
+        BubbleSort.sort(array3);
+        end = System.nanoTime();
+        System.out.printf(
+                "Сортировка пузырьком справилась c сортировкой массива из %s элементов за %sмс\n",
                 amountElements, (end - start) / 1_000_000
         );
     }
